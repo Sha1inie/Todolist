@@ -18,7 +18,7 @@ function AddTask() {
     saveData();
 }
 
-//to check teh task in list <3
+//to check the task in list <3
 listContainer.addEventListener("click", function (e) {
     if (e.target.tagName === "LI") {
         e.target.classList.toggle("checked");
