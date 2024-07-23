@@ -1,8 +1,8 @@
 // variables for the input field and button
-
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 
+//To add task and save it 
 function AddTask() {
     if (inputBox.value === '') {
         alert("I think you forgot to add your task?!");
@@ -18,6 +18,7 @@ function AddTask() {
     saveData();
 }
 
+//to check teh task in list <3
 listContainer.addEventListener("click", function (e) {
     if (e.target.tagName === "LI") {
         e.target.classList.toggle("checked");
@@ -28,13 +29,14 @@ listContainer.addEventListener("click", function (e) {
     }
 }, false);
 
-// Added just now 
+// Double click function to edit the task
 listContainer.addEventListener("dblclick", function (e) {
     if (e.target.tagName === "LI") {
         editTask(e.target);
     }
 });
 
+//to save data in local storage
 function saveData(){
     localStorage.setItem("data", listContainer.innerHTML);
 }
@@ -44,7 +46,7 @@ function showtask(){
 }
 showtask(); 
 
-// this too
+// To edit the list tasks 
 function editTask(li) {
     const originalText = li.firstChild.textContent;
     const input = document.createElement("input");
